@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "MyProjectProto";
+option objc_class_prefix = "service";
+option java_package = "service.project";
+package my.project;
+
+
+// Servie1
+service AlteredRouteNotification {
+    rpc SendRouteInfo(MsgRequest) returns (stream MsgReply) {}
+}
+
+// Service2
+service AvailableSeats {
+	rpc checkSeats(MsgRequest) returns (MsgReply) {}
+}
+
+// Servie3
+service BroadcastingLocation {
+	rpc sendLocation (stream MsgRequest) returns (MsgReply) {}
+}
+
+// Client to Server
+message MsgRequest {
+
+    string vehicleId = 2; // Service2
+    double latitude = 3; // Service3
+    double longitude = 4; // Service3
+}
+
+
+// Server to Client
+message MsgReply {
+
+  string message = 1; // Service1
+  int32 availableSeats = 2; // Service2
+  
+}
