@@ -26,7 +26,7 @@ public class Service3Client {
     }
 
     public void sendLocation(MsgRequest request, StreamObserver<MsgReply> responseObserver) {
-        asyncStub.sendLocation(request, responseObserver);
+        asyncStub.sendLocation(responseObserver);
     }
     
     public double getRandomLatitude() {
