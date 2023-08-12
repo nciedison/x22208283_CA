@@ -188,30 +188,13 @@ public class GUI extends JFrame {
         contentPane.add(btnNewButton_3);
         
         JLabel lblNewLabel_6 = new JLabel("The eircode:");
-        lblNewLabel_6.setBounds(187, 288, 87, 16);
+        lblNewLabel_6.setBounds(35, 290, 87, 16);
         contentPane.add(lblNewLabel_6);
         
         textField_4 = new JTextField();
-        textField_4.setBounds(270, 281, 125, 29);
+        textField_4.setBounds(151, 281, 125, 29);
         contentPane.add(textField_4);
         textField_4.setColumns(10);
-        
-        JButton btnNewButton_4 = new JButton("Find eircode");
-        btnNewButton_4.setEnabled(true);
-        btnNewButton_4.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		String currentLocation = textField_3.getText();
-                if (!currentLocation.isEmpty()) {
-                    String randomAirCode = generateRandomAirCode();
-                    textField_4.setText(randomAirCode);
-                } else {
-                    textField_4.setText("Please update location first.");
-        		
-                }
-        	}
-        });
-        btnNewButton_4.setBounds(52, 281, 117, 29);
-        contentPane.add(btnNewButton_4);
     }
     
     private void resetGUI() {
